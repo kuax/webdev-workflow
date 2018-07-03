@@ -4,11 +4,11 @@ const webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, 'src/js'),
     entry: {
-        app: './main.js',
+        main: './main.js',
     },
     output: {
         path: path.resolve(__dirname, 'js'),
-        filename: 'main.bundle.js',
+        filename: '[name].bundle.js',
     },
     module: {
         rules: [
