@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 var webpack = require('webpack-stream');
 var log = require('fancy-log');
 var plumber = require('gulp-plumber');
@@ -19,6 +20,7 @@ gulp.task('sass', function() {
                 .pipe(sass({
                     outputStyle: 'compressed'
                 }).on('error', sass.logError))
+                .pipe(autoprefixer())
                 .pipe(sourcemaps.write('./maps'))
                 .pipe(gulp.dest('./css'));
 });
